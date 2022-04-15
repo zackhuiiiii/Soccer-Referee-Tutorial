@@ -1,0 +1,26 @@
+
+body{
+    background: url(background.jpg); /* fallback */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.468) 0%,rgb(107, 107, 107) 100%), url(background.jpg);
+    /* background: url('background.jpg') no-repeat center center, linear-gradient(rgba(236, 228, 228, 0.045), rgba(222, 214, 214, 0.838), 0.5); */
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: black;
+    color: white;
+}
+.web-title{
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+}
+.introduction{
+    text-align: left;
+    margin: 50px;
+}
+.mainPage{
+    padding-top: 30px;
+    height: 100vh;
+}
+.bar{
+    display: block;
+}
