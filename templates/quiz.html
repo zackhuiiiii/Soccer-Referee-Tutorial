@@ -1,0 +1,14 @@
+{% extends "quizLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='quiz.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='quiz.css')}}" rel="stylesheet">
+
+
+<div class="container" id="main_page"> 
+    <h1>quiz page content</h1>
+    <button onclick="window.location='/'">return to homepage</button>
+</div>
+
+{% endblock %}

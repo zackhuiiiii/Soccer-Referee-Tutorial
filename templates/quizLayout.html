@@ -19,20 +19,20 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="navbar-brand nav-title">Quiz</div>
+        <div class="navbar-brand nav-right">
+            <span class="navbar-secondary-brand">Question {{ques_index}}/5</span>
+            <span class="navbar-secondary-brand">Score: {{score}}/5</span>
+        </div>
+        
+        <img src="">
+    </nav>
     <div class="container-fluid">
-        <div class="web-title">
-            <h1>Learn about Soccer and it's referee rules!</h1>
-        </div>
-        <div class="introduction">
-            <p>Referee your next local game!</p>
-            <p>Use the bar on the right to control your progress</p>
-            <p>This tutorial focuses on the objective rules, understanding finer aspects requires more experience</p>
-        </div>
-        <div class="choice_button">
-            <button onclick="window.location='/learn/1'"> Start Learning! </button>
-        </div>
+        {% block content %}
+        {% endblock %}
     </div>
-    
+
     
 </body>
 </html>

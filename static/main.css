@@ -1,7 +1,7 @@
 
 body{
     background: url(background.jpg); /* fallback */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.468) 0%,rgb(107, 107, 107) 100%), url(background.jpg);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.745) 0%,rgb(55, 55, 55) 100%), url(background.jpg);
     /* background: url('background.jpg') no-repeat center center, linear-gradient(rgba(236, 228, 228, 0.045), rgba(222, 214, 214, 0.838), 0.5); */
     background-size: cover;
     background-attachment: fixed;
@@ -23,4 +23,27 @@ body{
 }
 .bar{
     display: block;
+}
+.choice_button{
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+.navbar{
+    background-color: rgba(86, 120, 152, 0.829);
+    color: white;
+}
+.nav-title{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+}
+.nav-right{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+}
+.navbar-secondary-brand{
+    font-size: 20px;
+    padding-right: 30px;
 }
