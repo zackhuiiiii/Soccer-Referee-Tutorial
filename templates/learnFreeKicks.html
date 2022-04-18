@@ -1,0 +1,54 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="learnFreeKick"> 
+    <h1>Free Kicks</h1>
+    <div class="row learn">
+        <div class="col-md-6">
+            <h2>
+                Direct
+            </h2>
+            <img src="../static/indirectfreekick.gif">
+        </div>
+        <div class="col-md-6">
+            <h2>
+                Indirect
+            </h2>
+            <img src="../static/directfreekick.gif">
+        </div>
+    </div>
+
+    <div class="row learnContent">
+        <div class="col-md-6">
+            <ul>
+                <li>Whistle blown</li>
+                <li>Empty hand points to the attacking team (no angle) </li>
+                <li>Pointed team receives free kick</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li>Whistle blown</li>
+                <li>Empty hand points to the sky </li>
+                <li>Referee then explains who is receiving the free kick and for what. </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row learnNote">
+        <div class="col-md-6">
+            Make sure to only stop play if the ref blows the whistle.
+        </div>
+        <div class="col-md-6">
+            Common causes: a goalkeeper commits a specific offense in his or her own penalty area. 
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

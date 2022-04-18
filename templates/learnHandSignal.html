@@ -1,0 +1,22 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="learnHandSignal"> 
+    <h1>Hand Signal</h1>
+    <!-- <div id="recordline"></div> -->
+    <div class="handSignalContent">
+        Regardless of the language players and audience speak, they understand the same hand signals.
+    </div>
+    <div class="handSignalContent">
+        Learning them involves recognizing different hand movements, gestures and the flag system.
+    </div>
+    <button onclick="window.location='/learn/freeKick'"> Start with Free Kicks! </button>
+
+</div>
+
+{% endblock %}

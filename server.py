@@ -95,10 +95,14 @@ def learnpage(id = None):
         return render_template('learnOtherSignals.html')
     elif id == "redCard":
         return render_template('learnRedCard.html')
+<<<<<<< HEAD
     elif id =="yellowCard":
         return render_template('learnYellowCard.html')
     elif id =="offsides":
         return render_template('learnOffsides.html')
+=======
+    
+>>>>>>> 93b539880d6135b40a90b59db2d4e50f6223e9b7
 
 @app.route('/finishtutorial')
 def finish_tutorial():
