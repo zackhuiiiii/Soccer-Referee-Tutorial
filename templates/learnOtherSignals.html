@@ -6,9 +6,46 @@
 <link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
 
 
-<div class="container" id="learnHandSignal"> 
-    <h1>Learn Other Signals</h1>
-    <!-- <div id="recordline"></div> -->
+<div class="container" id="learnOtherSignal"> 
+    <h1>Other Signals</h1>
+    <div class="row learnHeader">
+        <div class="col-md-6">
+            <h2>
+                Penalty Kicks
+            </h2>
+            <img src="../static/penaltykick.gif">
+        </div>
+        <div class="col-md-6">
+            <h2>
+                Advantage
+            </h2>
+            <img src="../static/advantage.gif">
+        </div>
+    </div>
+
+    <div class="row learnContent">
+        <div class="col-md-6">
+            <ul>
+                <li>Whistle blown long and firm</li>
+                <li>Points directly to the penalty spot of the team </li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li>Both arms put out parallelly</li>
+                <li>Pointing to the goal of the team that has the advantage. </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row learnNote">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6">
+            Referee does not blow the whistle for this signal.
+
+        </div>
+    </div>
 </div>
 
 {% endblock %}
