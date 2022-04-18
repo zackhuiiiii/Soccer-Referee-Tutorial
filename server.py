@@ -4,7 +4,7 @@ from flask import Response, request, jsonify
 import json
 
 app = Flask(__name__)
-
+score=0
 quiz_status = {
     # N for not anserwed, C for correct, W for wrong
     "1": "C", "2": "W", "3": "N", "4": "N", "5": "N", "6": "N", "7": "N", 
@@ -37,7 +37,8 @@ quiz_question  ={
             "B": "2",
             "C": "1",
             "D": "0"},
-        "Correct_answer": "A"
+        "Correct_answer": "A",
+        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
     },
     "4": {
         "Q": "If the attacking player at the bottom of the screen (who is not offside) is on the receiving end of the pass and proceeds to score, will that goal be allowed considering his teammates were offside?",
@@ -55,7 +56,8 @@ quiz_question  ={
             "B": "Yellow Card",
             "C": "Red Card",
             "D": "No action can be taken due to the minor nature of the fouls"},
-        "Correct_answer": "A"
+        "Correct_answer": "A",
+        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fgfycat.com%2Fastonishingflusteredalaskanhusky&psig=AOvVaw0RRBKBVzSm2RNqIcfUS2j9&ust=1650247236179000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMCQrZSAmvcCFQAAAAAdAAAAABAV"
     },
     "6": {
         "Q": "The defender of a team has clearly used their hands to prevent a clear goalscoring opportunity. What would be the right way to handle this situation if you were the referee of the game?",
@@ -64,7 +66,8 @@ quiz_question  ={
             "B": "Yellow Card",
             "C": "Red Card",
             "D": "No action can be taken"},
-        "Correct_answer": "A"
+        "Correct_answer": "A",
+        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
     },
     "7": {
         "Q": "A player is trying to run down the clock by taking time to take the throw-ins. What should the referee do in  this situation?",
@@ -73,7 +76,8 @@ quiz_question  ={
         "B": "Yellow card and keep note of the wasted time to add to extra time",
         "C": "Red Card",
         "D": ""},
-        "Correct_answer": "A"
+        "Correct_answer": "A",
+        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
     }
 }
 
@@ -86,20 +90,8 @@ def homepage():
  
 @app.route('/learn/<id>')
 def learnpage(id = None):
-    print("id= ",id)
-    if id == "handSignal":
-        return render_template('learnHandSignal.html')
-    elif id == "freeKick":
-        return render_template('learnFreeKicks.html')
-    elif id == "otherSignal":
-        return render_template('learnOtherSignals.html')
-    elif id == "redCard":
-        return render_template('learnRedCard.html')
-    elif id =="yellowCard":
-        return render_template('learnYellowCard.html')
-    elif id =="offsides":
-        return render_template('learnOffsides.html')
-    
+
+    return render_template('learn.html') 
 
 @app.route('/finishtutorial')
 def finish_tutorial():
@@ -109,9 +101,33 @@ def finish_tutorial():
 
 @app.route('/quiz/<id>')
 def quizpage(id = None):
-    score = 0
-    print(quiz_question[id])
+    # print(quiz_question[id])
     return render_template('quiz.html', ques_index = id, ques_content = quiz_question[id], score = score, ques_status = quiz_status)
+
+
+@app.route('/quiz_final/')
+def quiz_final():
+    # print(quiz_question[id])
+    return render_template('quiz_final.html',score = score)
+
+
+@app.route('/increment', methods=['GET', 'POST'])
+def increment():
+    global score
+    json_data = request.get_json()   
+    ans = json_data["answer"] 
+    ind=json_data["index"]
+    print(ans,ind)
+    if(quiz_question[str(ind)]['Correct_answer']==ans):
+        score+=1
+    print(score)
+    # add new entry to array with 
+    # a new id and the name the user sent in JSON
+    
+    data='Incremented'
+    #send back the WHOLE array of data, so the client can redisplay it
+    return jsonify(data = data)
+ 
 
 # @app.route('/quiz',  methods=['POST'])
 # def search():

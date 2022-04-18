@@ -1,0 +1,17 @@
+{% extends "quizLayout.html" %}
+{% block content %}
+
+
+<script>
+    let q_score = {{score|tojson}}
+    console.log(q_score)
+    $(".out").text("Your final score is "+q_score);
+
+</script>
+
+<div class="container" id="main_page"> 
+    
+    <div class="out"></div>
+</div>
+
+{% endblock %}

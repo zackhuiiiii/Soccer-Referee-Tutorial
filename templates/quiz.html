@@ -1,4 +1,4 @@
-{% extends "quizLayout.html" %}
+{% extends "learnLayout.html" %}
 
 {% block content %}
 
@@ -9,10 +9,12 @@
     let q_content = {{ques_content|tojson}}
     let q_status = {{ques_status|tojson}}
     let q_index = {{ques_index}} 
+    // console.log('sss')
 </script>
 
 <div class="container" id="main_page"> 
     <div class="quiz_question"></div>
+    <div class="media"></div>
     <div class="choices"></div>
     <!-- <button onclick="window.location='/'">return to homepage</button> -->
     <div id="quiz_action_button"></div>
