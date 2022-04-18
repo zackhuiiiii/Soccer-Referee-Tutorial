@@ -1,0 +1,17 @@
+.quiz_question{
+    font-size: 25px;
+    margin: 100px auto;
+}
+.choices{
+    margin: 20px;
+    font-size: 20px;
+}
+.green_btn{
+    background-color: rgba(142, 210, 142, 0.701);
+}
+.red_btn{
+    background-color: rgba(239, 160, 160, 0.701);
+}
+.yellow_btn{
+    background-color: rgba(237, 223, 157, 0.701);
+}

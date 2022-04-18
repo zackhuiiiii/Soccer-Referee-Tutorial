@@ -5,7 +5,77 @@ import json
 
 app = Flask(__name__)
 
+quiz_status = {
+    # N for not anserwed, C for correct, W for wrong
+    "1": "C", "2": "W", "3": "N", "4": "N", "5": "N", "6": "N", "7": "N", 
+}
 
+# not all the questions is filled, and the Correct_answer is not changed into the correct one
+quiz_question  ={
+    "1": {
+        "Q": "An outfield player passes the ball back to their goalkeeper who proceeds to touch the ball with their hands. What should you as the referee do in such a situation?",
+        "Answers":{
+            "A": "Warn the goalkeeper by giving them a yellow card",
+            "B": "Award an indirect free kick to the opposing team",
+            "C": "Award a penalty kick to the opposing team",
+            "D": "Play on"},
+        "Correct_answer": "A"   
+    },
+    "2": {
+        "Q": "Drag the correct name to the corresponding gesturing picture.",
+        "Answers":{
+            "A": "Indirect Kick Off",
+            "B": "Direct Kick Off",
+            "C": "Advantage",
+            "D": "Red Card"},
+        "Correct_answer": "A"
+    },
+    "3": {
+        "Q": "How many of the attacking players are offside in this sequence of play?",
+        "Answers":{
+            "A": "3",
+            "B": "2",
+            "C": "1",
+            "D": "0"},
+        "Correct_answer": "A"
+    },
+    "4": {
+        "Q": "If the attacking player at the bottom of the screen (who is not offside) is on the receiving end of the pass and proceeds to score, will that goal be allowed considering his teammates were offside?",
+        "Answers":{
+            "A": "Yes",
+            "B": "No",
+            "C": "Upon the referee's discretion",
+            "D": ""},
+        "Correct_answer": "A"
+    },
+    "5": {
+        "Q": "A player has been committing a lot of minor fouls to interrupt the flow of play while their team is defending the lead. What would be the right way to handle this situation if you were the referee of the game?",
+        "Answers":{
+            "A": "Warn the player that another minor foul would get them yellow carded",
+            "B": "Yellow Card",
+            "C": "Red Card",
+            "D": "No action can be taken due to the minor nature of the fouls"},
+        "Correct_answer": "A"
+    },
+    "6": {
+        "Q": "The defender of a team has clearly used their hands to prevent a clear goalscoring opportunity. What would be the right way to handle this situation if you were the referee of the game?",
+        "Answers":{
+            "A": "Warn the player that another minor foul would get them yellow carded",
+            "B": "Yellow Card",
+            "C": "Red Card",
+            "D": "No action can be taken"},
+        "Correct_answer": "A"
+    },
+    "7": {
+        "Q": "A player is trying to run down the clock by taking time to take the throw-ins. What should the referee do in  this situation?",
+        "Answers":{
+            "A": "Warn the player",
+        "B": "Yellow card and keep note of the wasted time to add to extra time",
+        "C": "Red Card",
+        "D": ""},
+        "Correct_answer": "A"
+    }
+}
 
 # ROUTES
 
@@ -27,9 +97,10 @@ def finish_tutorial():
 @app.route('/quiz/<id>')
 def quizpage(id = None):
     score = 0
-    return render_template('quiz.html', ques_index = id, score = score)
+    print(quiz_question[id])
+    return render_template('quiz.html', ques_index = id, ques_content = quiz_question[id], score = score, ques_status = quiz_status)
 
-# @app.route('/search_result',  methods=['POST'])
+# @app.route('/quiz',  methods=['POST'])
 # def search():
 
 #     return render_template('search_result.html')

@@ -5,10 +5,17 @@
 <script src="{{ url_for('static', filename='quiz.js')}}"></script>
 <link type="text/css" href="{{ url_for('static', filename='quiz.css')}}" rel="stylesheet">
 
+<script>
+    let q_content = {{ques_content|tojson}}
+    let q_status = {{ques_status|tojson}}
+    let q_index = {{ques_index}} 
+</script>
 
 <div class="container" id="main_page"> 
-    <h1>quiz page content</h1>
-    <button onclick="window.location='/'">return to homepage</button>
+    <div class="quiz_question"></div>
+    <div class="choices"></div>
+    <!-- <button onclick="window.location='/'">return to homepage</button> -->
+    <div id="quiz_action_button"></div>
 </div>
 
 {% endblock %}
