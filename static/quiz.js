@@ -4,10 +4,10 @@ var status_button_class = {"N": "yellow_btn", "C": "green_btn", "W": "red_btn"}
 function question_content(){
     // fill in quiz question and the options
     $(".quiz_question").text(q_content["Q"]);
-    if(q_content['media']){
-        media=q_content['media']
-        $(".media").append(' <img src=media>');
-    }
+    //if(q_content['media']){
+        ///media=q_content['media']
+        ///$(".media").append(' <img src=media>');
+    ///}
     let $options = $(`<form action="/quiz" method="post"></form>`);
     for(let letter in q_content['Answers']){
         $options.append(`<input type="radio" name="question${q_index}" value="${letter}" />${letter}: ${q_content['Answers'][letter]}<br/>`);

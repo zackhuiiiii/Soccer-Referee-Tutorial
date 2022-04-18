@@ -19,7 +19,7 @@ quiz_question  ={
             "B": "Award an indirect free kick to the opposing team",
             "C": "Award a penalty kick to the opposing team",
             "D": "Play on"},
-        "Correct_answer": "A"   
+        "Correct_answer": "B"   
     },
     "2": {
         "Q": "Drag the correct name to the corresponding gesturing picture.",
@@ -28,7 +28,7 @@ quiz_question  ={
             "B": "Direct Kick Off",
             "C": "Advantage",
             "D": "Red Card"},
-        "Correct_answer": "A"
+        "Correct_answer": "D"
     },
     "3": {
         "Q": "How many of the attacking players are offside in this sequence of play?",
@@ -37,7 +37,7 @@ quiz_question  ={
             "B": "2",
             "C": "1",
             "D": "0"},
-        "Correct_answer": "A",
+        "Correct_answer": "B",
         "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
     },
     "4": {
@@ -66,7 +66,7 @@ quiz_question  ={
             "B": "Yellow Card",
             "C": "Red Card",
             "D": "No action can be taken"},
-        "Correct_answer": "A",
+        "Correct_answer": "C",
         "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
     },
     "7": {
@@ -76,7 +76,7 @@ quiz_question  ={
         "B": "Yellow card and keep note of the wasted time to add to extra time",
         "C": "Red Card",
         "D": ""},
-        "Correct_answer": "A",
+        "Correct_answer": "B",
         "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
     }
 }
