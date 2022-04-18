@@ -86,13 +86,25 @@ def homepage():
  
 @app.route('/learn/<id>')
 def learnpage(id = None):
-
-    return render_template('learn.html') 
+    print("id= ",id)
+    if id == "handSignal":
+        return render_template('learnHandSignal.html')
+    elif id == "freeKick":
+        return render_template('learnFreeKicks.html')
+    elif id == "otherSignal":
+        return render_template('learnOtherSignals.html')
+    elif id == "redCard":
+        return render_template('learnRedCard.html')
+    elif id =="yellowCard":
+        return render_template('learnYellowCard.html')
+    elif id =="offsides":
+        return render_template('learnOffsides.html')
 
 @app.route('/finishtutorial')
 def finish_tutorial():
 
     return render_template('finishtutorial.html')
+
 
 @app.route('/quiz/<id>')
 def quizpage(id = None):

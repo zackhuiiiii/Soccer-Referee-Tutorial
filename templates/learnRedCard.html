@@ -1,0 +1,24 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="redCard"> 
+    <h1>Red Card</h1>
+    <span>The player is ejected from the field and is allowed no further part in the game. </span>
+    <img src="https://www.if.org.uk/wp-content/uploads/2014/09/Red-Card.jpg" alt="Red card pic" width="350" height="400"><br>
+    <b>Referee Action:</b><br>
+    <span>
+        point the red card at them and then hold it straight up in the air, just like with a yellow card.</span><br>
+    </span>If the ref gives the player a red card for receiving 2 yellow cards, the ref will point the yellow card at them first, followed by the red card.
+         </span><br>
+    <b>Examples of offences:</b><br>
+    <span>One player punching another player</span><br>
+    <span>severe offences or for multiple yellow cards</span>
+    <!-- <div id="recordline"></div> -->
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="yellowCard"> 
+    <h1>Yellow Card</h1>
+    <span>Considered as a warning Two yellow card equals to one red card</span>
+    <img src="https://www.bennionkearny.com/wp-content/uploads/2020/01/Soccer-yellow-Card.jpg" alt="Red card pic" width="350" height="400"><br>
+    <b>Referee Action:</b><br>
+    <span>
+        Takes the card out of their pocket, points it at the player, then points it in the air. Write the details of the offence in their notebook.
+        </span><br>
+    <b>Examples of offences:</b><br>
+    <span>A harsh tackle where the tackler didn't make any contact with the ball</span><br>
+    <span>unsportsmanlike behavior</span>
+    <span>Delaying the restart of the play or persistent minor offences</span>
+    <!-- <div id="recordline"></div> -->
+</div>
+
+{% endblock %}
