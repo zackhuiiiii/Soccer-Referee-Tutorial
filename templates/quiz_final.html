@@ -3,15 +3,18 @@
 
 
 <script>
-    let q_score = {{score|tojson}}
-    console.log(q_score)
-    //$(".out").text("Your final score is "+q_score);
-    alert("Your Score is: "+q_score)
+    // let q_score = {{score|tojson}}
+    // let text = {{message|tojson}}
 </script>
 
-<div class="container" id="main_page"> 
-    
-    <div class="out"></div>
+<div class="container-fluid">
+    <div class="web-title">
+        <h1>Your score is {{score}}</h1>
+        <h3>{{message}}</h3>
+    </div>
+    <div class="choice_button">
+        <button onclick="window.location='/'">Restart the tutorial</button>
+    </div>
 </div>
 
 {% endblock %}

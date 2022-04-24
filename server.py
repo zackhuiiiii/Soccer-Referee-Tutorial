@@ -4,10 +4,10 @@ from flask import Response, request, jsonify
 import json
 
 app = Flask(__name__)
-score=0
+score = 0
 quiz_status = {
     # N for not anserwed, C for correct, W for wrong
-    "1": "C", "2": "W", "3": "N", "4": "N", "5": "N", "6": "N", "7": "N", 
+    "1": "N", "2": "N", "3": "N", "4": "N", "5": "N", "6": "N", "7": "N", 
 }
 
 # not all the questions is filled, and the Correct_answer is not changed into the correct one
@@ -118,26 +118,34 @@ def quizpage(id = None):
 
 @app.route('/quiz_final/')
 def quiz_final():
-    # print(quiz_question[id])
-    return render_template('quiz_final.html',score = score)
+    
+    if int(score) > 5:
+        message = "Congratulations! You have passed the quiz!"
+    else:
+        message = "Sorry you have not passed the quiz. Maybe you can review the tutorial."
+    return render_template('quiz_final.html', score = score, message = message)
 
 
 @app.route('/increment', methods=['GET', 'POST'])
 def increment():
     global score
+
     json_data = request.get_json()   
     ans = json_data["answer"] 
     ind=json_data["index"]
+    result = {"status": 'F', "choice": ans, "correct_answer": quiz_question[str(ind)]['Correct_answer'], "score": score}
+    quiz_status[str(ind)] = 'W'
     print(ans,ind)
-    if(quiz_question[str(ind)]['Correct_answer']==ans):
-        score+=1
-    print(score)
-    # add new entry to array with 
-    # a new id and the name the user sent in JSON
-    
-    data='Incremented'
+    if(quiz_question[str(ind)]['Correct_answer']==ans):       # correct answer
+        score += 1
+        result['status'] = 'T'
+        result['score'] = score
+        quiz_status[str(ind)] = 'C'
+
+    print("score", score)
+    print("result", result)
     #send back the WHOLE array of data, so the client can redisplay it
-    return jsonify(data = data)
+    return jsonify(result)
  
 
 # @app.route('/quiz',  methods=['POST'])

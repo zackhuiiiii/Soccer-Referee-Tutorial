@@ -6,12 +6,42 @@
     margin: 20px;
     font-size: 20px;
 }
-.green_btn{
+.green_box{
     background-color: rgba(142, 210, 142, 0.701);
 }
-.red_btn{
+.red_box{
     background-color: rgba(239, 160, 160, 0.701);
 }
-.yellow_btn{
-    background-color: rgba(237, 223, 157, 0.701);
+.yellow_box{
+    background-color: rgba(243, 240, 222, 0.701);
+}
+
+#quiz_action_button{
+    margin-top: 50px;
+}
+.status_box{
+    position: absolute;
+    right: 100px;
+    margin: 50px;
+    bottom: 50px;
+}
+.quiz_status_box{
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    margin: 3px;
+}
+
+.correct_choice{
+    background-color: rgba(178, 235, 178, 0.797);
+    border-radius: 5px;
+    padding-right: 5px;
+}
+.wrong_choice{
+    background-color: rgba(239, 160, 160, 0.701);
+    border-radius: 5px;
+    padding-right: 5px;
 }
