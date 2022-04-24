@@ -4,10 +4,10 @@ var status_button_class = {"N": "yellow_box", "C": "green_box", "W": "red_box"}
 function question_content(){
     // fill in quiz question and the options
     $(".quiz_question").text(q_content["Q"]);
-    //if(q_content['media']){
-        ///media=q_content['media']
-        ///$(".media").append(' <img src=media>');
-    ///}
+    if(q_content['media']){
+        media=q_content['media']
+        $("#media").append(`<img src = ${media} id="quiz_media">`);
+    }
     let $options = $(`<form></form>`);
     for(let letter in q_content['Answers']){
         $options.append(`<input type="radio" name="question${q_index}" value="${letter}"/>
@@ -21,10 +21,9 @@ function question_content(){
 };
 
 function quiz_button(){
-    // generate submit and last question button
+    // generate submit and answer status
     console.log(q_status);
     $("#submit_button").append('<button type="button" onClick="Submit()" class="btn btn-info">Submit</button>')
-    // $options.append('<br>')
 
     $("#quiz_action_button").append(`<h4> Quiz Status</h4>`)
     for(let quiz in q_status){

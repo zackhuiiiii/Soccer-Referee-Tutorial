@@ -38,7 +38,7 @@ quiz_question  ={
             "C": "1",
             "D": "0"},
         "Correct_answer": "B",
-        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
+        "media":"/static/quiz_35.gif"
     },
     "4": {
         "Q": "If the attacking player at the bottom of the screen (who is not offside) is on the receiving end of the pass and proceeds to score, will that goal be allowed considering his teammates were offside?",
@@ -57,7 +57,7 @@ quiz_question  ={
             "C": "Red Card",
             "D": "No action can be taken due to the minor nature of the fouls"},
         "Correct_answer": "A",
-        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fgfycat.com%2Fastonishingflusteredalaskanhusky&psig=AOvVaw0RRBKBVzSm2RNqIcfUS2j9&ust=1650247236179000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCMCQrZSAmvcCFQAAAAAdAAAAABAV"
+        "media":"/static/quiz_35.gif"
     },
     "6": {
         "Q": "The defender of a team has clearly used their hands to prevent a clear goalscoring opportunity. What would be the right way to handle this situation if you were the referee of the game?",
@@ -67,7 +67,7 @@ quiz_question  ={
             "C": "Red Card",
             "D": "No action can be taken"},
         "Correct_answer": "C",
-        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
+        "media":"/static/quiz_6.gif"
     },
     "7": {
         "Q": "A player is trying to run down the clock by taking time to take the throw-ins. What should the referee do in  this situation?",
@@ -77,7 +77,7 @@ quiz_question  ={
         "C": "Red Card",
         "D": ""},
         "Correct_answer": "B",
-        "media":"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FLiverpoolFC%2Fcomments%2Fsx394h%2Fthis_means_why_liverpool_defenders_records_the%2F&psig=AOvVaw3PvssNVANhYFBtF-Afa4X5&ust=1650247110760000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLih-9j_mfcCFQAAAAAdAAAAABAD"
+        "media":"/static/quiz_7.jpg"
     }
 }
 
