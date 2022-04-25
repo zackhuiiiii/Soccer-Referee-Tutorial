@@ -166,7 +166,7 @@ def increment():
     quiz_status[str(ind)] = 'W'
     print(ans,ind)
 
-    if (ind=='2' and ans=='T') or (quiz_question[str(ind)]['Correct_answer']==ans):       # correct answer
+    if (str(ind) == '2' and ans=='T') or (quiz_question[str(ind)]['Correct_answer']==ans):       # correct answer
         score += 1
         result['status'] = 'T'
         result['score'] = score

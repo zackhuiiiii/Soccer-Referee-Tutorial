@@ -20,10 +20,12 @@ $(function(){
         drop: function( event, ui ) {
             let choice = ui.draggable.text();
             let option= $(this).attr('data-name');
+            console.log(choice, option)
             flag++;
             if(choice != option){
                 answer_quiz2 = "F";
             }
+            console.log(answer_quiz2)
         }
     });
 });
@@ -42,7 +44,7 @@ function question_content(){
             $options.append(`<div class="drag_option">${q_content['Answers'][letter]}</div>`)
             $('#media').append(`<div class="answer_div">
                                     <img class="drag_img" src="${q_content['Media'][letter]}" alt="choice${letter}" id="${letter}">
-                                    <div class="drop_div" data-name="${q_content['Answers'][letter]}"></div>
+                                    <div class="drop_div" data-name="${q_content['Correct_answer'][letter]}"></div>
                                 </div>`)
         }
         $('.choices').append($options)
