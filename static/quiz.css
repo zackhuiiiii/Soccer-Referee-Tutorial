@@ -51,3 +51,39 @@
     border-radius: 5px;
     padding-right: 5px;
 }
+.correct_drag_answer{
+    background-color: rgba(178, 235, 178, 0.797);
+    width: 190px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.drag_option{
+    background-color: rgb(70, 96, 119);
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    margin: 20px;
+    text-align: center;
+}
+.drag_option:hover{
+    background-color: rgb(99, 128, 153);
+    cursor: move;
+}
+.drag_img{
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+}
+.drop_div{
+    width: 200px;
+    height: 70px;
+    margin: 10px;
+    border-style: dotted;
+    border-radius: 5px;
+    border-color: rgb(70, 96, 119);
+}
+.answer_div{
+    display: inline-block;
+}

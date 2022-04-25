@@ -24,11 +24,22 @@ quiz_question  ={
     "2": {
         "Q": "Drag the correct name to the corresponding gesturing picture.",
         "Answers":{
-            "A": "Indirect Kick Off",
-            "B": "Direct Kick Off",
-            "C": "Advantage",
-            "D": "Red Card"},
-        "Correct_answer": "D"
+            "D": "Direct Kick Off",
+            "C": "Indirect Kick Off",
+            "B": "Red and Yellow Card",
+            "A": "Advantage"},
+        "Media":{
+            "A": "/static/quiz2_1.jpg",
+            "B": "/static/quiz2_2.jpg",
+            "C": "/static/quiz2_3.jpg",
+            "D": "/static/quiz2_4.jpg"
+        },
+        "Correct_answer": {
+            "A": "Direct Kick Off",
+            "B": "Indirect Kick Off",
+            "C": "Red and Yellow Card",
+            "D": "Advantage"
+        }
     },
     "3": {
         "Q": "How many of the attacking players are offside in this sequence of play?",
@@ -47,7 +58,8 @@ quiz_question  ={
             "B": "No",
             "C": "Upon the referee's discretion",
             "D": ""},
-        "Correct_answer": "A"
+        "Correct_answer": "A",
+        "media":"/static/quiz_35.gif"
     },
     "5": {
         "Q": "A player has been committing a lot of minor fouls to interrupt the flow of play while their team is defending the lead. What would be the right way to handle this situation if you were the referee of the game?",
@@ -56,8 +68,7 @@ quiz_question  ={
             "B": "Yellow Card",
             "C": "Red Card",
             "D": "No action can be taken due to the minor nature of the fouls"},
-        "Correct_answer": "A",
-        "media":"/static/quiz_35.gif"
+        "Correct_answer": "A"
     },
     "6": {
         "Q": "The defender of a team has clearly used their hands to prevent a clear goalscoring opportunity. What would be the right way to handle this situation if you were the referee of the game?",
@@ -75,7 +86,7 @@ quiz_question  ={
             "A": "Warn the player",
         "B": "Yellow card and keep note of the wasted time to add to extra time",
         "C": "Red Card",
-        "D": ""},
+        "D": "Award the throw-in to the opposite team"},
         "Correct_answer": "B",
         "media":"/static/quiz_7.jpg"
     }
@@ -136,7 +147,8 @@ def increment():
     result = {"status": 'F', "choice": ans, "correct_answer": quiz_question[str(ind)]['Correct_answer'], "score": score}
     quiz_status[str(ind)] = 'W'
     print(ans,ind)
-    if(quiz_question[str(ind)]['Correct_answer']==ans):       # correct answer
+
+    if (ind=='2' and ans=='T') or (quiz_question[str(ind)]['Correct_answer']==ans):       # correct answer
         score += 1
         result['status'] = 'T'
         result['score'] = score
