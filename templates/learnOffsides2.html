@@ -1,0 +1,27 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="Offsides"> 
+	
+    <h1 class="heading">Offsides</h1>
+    <div class="col-md-12">
+            <img src="../static/offside_2.jpg" class="center">
+       </div>
+    <!-- <iframe width="600" height="450" src="https://www.youtube.com/embed/GePlbCsGniA"> </iframe><br> -->
+    <h3>How to catch an offside</h3>
+    <ul>
+    	<li>A player can only be offside if they are on the side of the field that contains the opposing team's goal.</li>
+    	<li> A player can only be in an offside position if they are between the ball and the opposing goal.</li>
+    	<li>The attacker is "onside" as long as there are at least two defenders level with him or in front of him. If there are one or zero defenders between the attacker and the goal, and the attacker also meets the two conditions above, he is in an offside position.</li>
+    	<li>The goalkeeper is usually one of the two defenders closest to the goal, but any two defenders count.</li>
+    </ul>
+    
+    <!-- <div id="recordline"></div> -->
+</div>
+
+{% endblock %}

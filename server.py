@@ -122,6 +122,8 @@ def learnpage(id = None):
         return render_template('learnYellowCard.html')
     elif id =="offsides":
         return render_template('learnOffsides.html') 
+    elif id =="offsides_2":
+        return render_template('learnOffsides2.html') 
     elif id == "substitution":
         return render_template('learnSubstitution.html')
     elif id == "goal":
