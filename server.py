@@ -108,10 +108,10 @@ def learnpage(id = None):
         return render_template('learnFreeKicks.html')
     elif id == "penaltyKick":
         return render_template('learnPenalties.html')
-
+    elif id == "cornerKick":
+        return render_template('learnCornerKicks.html')
     elif id == "advantage":
         return render_template('learnAdvantage.html')
-    
     elif id == "indirectFreeKick":
         return render_template('learnIndirectFreeKicks.html')    
     elif id == "otherSignal":
@@ -122,6 +122,12 @@ def learnpage(id = None):
         return render_template('learnYellowCard.html')
     elif id =="offsides":
         return render_template('learnOffsides.html') 
+    elif id == "substitution":
+        return render_template('learnSubstitution.html')
+    elif id == "goal":
+        return render_template('learnGoal.html')
+    elif id == "throwin":
+        return render_template('learnThrowIn.html')
 
 @app.route('/finishtutorial')
 def finish_tutorial():

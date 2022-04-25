@@ -1,0 +1,40 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="learnGoal"> 
+    <h1 class='heading'>Goal</h1>
+    <div class="row learn">
+        <div class="col-md-12">
+            <img src="../static/goal.gif" class="center">
+        </div>
+    </div>
+
+    <div class="row learnContent">
+        <div class="col-md-6">
+            <h3>Common scenarios</h3>
+            <ul>
+                <li>When a team scores a legal goal.</li>
+                <li>The play is re-started from the center circle. </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Hand Signals</h3>
+                <ul>
+                    <li> The whistle is usually blown to signal a goal</li>
+                    <li>The referee points at the center circle with his arm pointed down</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    
+</div>
+
+{% endblock %}

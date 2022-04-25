@@ -1,0 +1,41 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="learnCornerKick"> 
+    <h1 class='heading'>Substitution</h1>
+    <div class="row learn">
+        <div class="col-md-12">
+            <img src="../static/substitution.gif" class="center">
+        </div>
+    </div>
+
+    <div class="row learnContent">
+        <div class="col-md-6">
+            <h3>Common scenarios</h3>
+            <ul>
+                <li>A substitution in football is a player that is replaced by another player from the sideline on the same team. Football teams can only have 11 players on the field of play for a down.</li>
+                <li> A team is usually allowed 3 substitutions.</li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Hand Signals</h3>
+                <ul>
+                    <li>Assistant Referee Signals to the referee by holding his flag overhead with both hands. </li>
+                    <li>Referee then blows his whistle and signals the assistant referee to allow the substitution to happen.</li>
+                    <li>A new player can come into the field of play only when the player being substituted has left the field.</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    
+</div>
+
+{% endblock %}
