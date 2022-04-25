@@ -106,6 +106,14 @@ def learnpage(id = None):
         return render_template('learnHandSignal.html')
     elif id == "freeKick":
         return render_template('learnFreeKicks.html')
+    elif id == "penaltyKick":
+        return render_template('learnPenalties.html')
+
+    elif id == "advantage":
+        return render_template('learnAdvantage.html')
+    
+    elif id == "indirectFreeKick":
+        return render_template('learnIndirectFreeKicks.html')    
     elif id == "otherSignal":
         return render_template('learnOtherSignals.html')
     elif id == "redCard":
