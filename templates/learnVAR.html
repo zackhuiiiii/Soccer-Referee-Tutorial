@@ -1,0 +1,44 @@
+{% extends "learnLayout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename='learn.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
+
+
+<div class="container" id="learnVAR"> 
+    <h1 class='heading'>Check VAR</h1>
+    <div class="row learn">
+        <div class="col-md-12">
+            <img src="https://c.tenor.com/llZtvjKe0gQAAAAC/referee-var.gif" class="center">
+        </div>
+        <!-- <div class="col-md-6">
+            <h2>
+                Indirect
+            </h2>
+            <img src="../static/directfreekick.gif">
+        </div> -->
+    </div>
+
+    <div class="row learnContent">
+        <div class="col-md-6">
+            <h3>Common scenarios</h3>
+            VAR will be used only for “clear and obvious errors” or “serious missed incidents” 
+            in four match-changing situations: goals; penalty decisions; direct red-card incidents; and mistaken identity.
+        
+        </div>
+
+        <div class="col-md-6">
+            <h3>Hand Signals</h3>
+                <ul>
+                    <li>Whistle blown and two hand make a rectangle</li>
+                    <li>Points on middle line </li>
+            </ul>
+        </div>
+        <a href="/learn/substitution" class="next">Next &raquo;</a>
+            <!-- <div class="col-md-6">
+        
+        </div> -->
+    </div>
+</div>
+{% endblock %}

@@ -128,6 +128,8 @@ def learnpage(id = None):
         return render_template('learnSubstitution.html')
     elif id == "goal":
         return render_template('learnGoal.html')
+    elif id=="var":
+        return render_template('learnVAR.html')
     elif id == "throwin":
         return render_template('learnThrowIn.html')
 
