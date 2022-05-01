@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Soccer Referee Tutorial</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='web-icon.png')}}">
 
     <!-- JQuery -->
     <script src=https://code.jquery.com/jquery-3.3.1.min.js crossorigin="anonymous"></script>
@@ -21,11 +22,11 @@
 <body>
     <div class="container-fluid">
         <div class="row mainPage">
-            <div class="col-md-10 col-sm-9">
+            <div class="col-md-10 col-sm-10">
                 {% block content %}
                 {% endblock %}
             </div>
-            <div class="col-md-2 col-sm-3">
+            <div class="col-md-2 col-sm-2">
                 <button class="bar" onclick="window.location='/'"> Introduction </button>
                 <button class="bar" onclick="window.location='/learn/handSignal'"> Handsignal </button>
                 <button class="bar" onclick="window.location='/learn/freeKick'"> Direct Free kicks </button>

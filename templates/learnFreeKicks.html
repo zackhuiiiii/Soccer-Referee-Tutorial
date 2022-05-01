@@ -6,69 +6,50 @@
 <link type="text/css" href="{{ url_for('static', filename='learn.css')}}" rel="stylesheet">
 
 
-<div class="container" id="learnFreeKick"> 
-    <h1 class='heading'>Direct Free Kicks</h1>
-    <div>
-    A ‘free kick’ is exactly how it sounds. A player gets to kick the ball without any players opposing them. A direct kick means that a player can take a direct shot at the goal and score. 
-
+<div class="container-fluid" id="learnFreeKick">
+    <div class='row'>
+      <div class=" heading">Direct Free Kicks</div>  
     </div>
-    <div class="row learn">
-        <div class="col-md-12">
-            <img src="../static/directfreekick.gif" class="center">
-        </div>
-        <!-- <div class="col-md-6">
-            <h2>
-                Indirect
-            </h2>
-            <img src="../static/directfreekick.gif">
-        </div> -->
+    <div class="row usercard">
+      <div class="col-md-6 vertical_center usercard_content">
+        <p> <span class="text_h4">'Free kick'</span> is exactly how it sounds. A player gets to kick the ball without any players opposing them. 
+        A direct kick means that a player can take a direct shot at the goal and score. </p>
+      </div>
+      <div class="col-md-6 pr-0 pl-3 center">
+        <img class="media" src="../static/directfreekick.gif">
+      </div>
     </div>
-
-    <div class="row learnContent">
-        <div class="col-md-6">
-            <h3>Awarded For</h3>
-            <ul>
-                <li>
-                    A referee gives direct kicks if a player is careless, reckless, or uses excessive force when committing fouls like striking, tackling, or tripping an opponent.
-                </li>
-            </ul>
-        
-        </div>
-
-        <div class="col-md-6">
-            <h3>Referee Signals</h3>
-                <ul>
-                    <li>Whistle blown</li>
-                    <li>Empty hand points to the attacking team (no angle) </li>
-                    <li>Pointed team receives free kick</li>
-                </ul>
-        </div>
-
-            <!-- <div class="col-md-6">
-            <ul>
-                <li>Whistle blown</li>
-                <li>Empty hand points to the sky </li>
-                <li>Referee then explains who is receiving the free kick and for what. </li>
-            </ul>
-        </div> -->
-    </div>
-    <br>
+    <br/>
     <div class="row">
-        <div class="col-md-12">
-            <h4><center>What happens</center></h4>
-            <ul>
-                <li> A free-kick in soccer restarts the game after a team commits a foul. A foul is an offense and is against the soccer laws.</li>
-                <li>The opposition stands 10 yards away from the ball for the kick to be taken</li>
-            </ul>       
+      <div class="col-md-6 p-1">
+        <div class=" usercard2">
+          <div class="card2_title">Awarded For</div>
+          <div class="card2_content">A referee gives direct kicks if a player is careless, reckless, or uses excessive force when committing fouls like striking, tackling, or tripping an opponent.</div>
         </div>
-        <!-- <div class="col-md-6">
-            Common causes: a goalkeeper commits a specific offense in his or her own penalty area. 
-
-        </div> -->
+      </div>
+      <div class="col-md-6 p-1">
+        <div class=" usercard2">
+          <div class="card2_title">Referee Signals</div>
+          <div class="card2_content">Whistle blown</div> <hr>
+          <div class="card2_content">Empty hand points to the attacking team (no angle)</div> <hr>
+          <div class="card2_content">Pointed team receives free kick</div>
+        </div> 
+      </div>
+      <div class="col-md-6 p-1">
+        <div class=" usercard2">
+          <div class="card2_title">What happens</div>
+          <div class="card2_content">A free-kick in soccer restarts the game after a team commits a foul. A foul is an offense and is against the soccer laws</div> <hr>
+          <div class="card2_content">The opposition stands 10 yards away from the ball for the kick to be taken</div>
+        </div> 
+      </div>
     </div>
-    <br>
-
-    <a href="/learn/indirectFreeKick" class="next">Next &raquo;</a>
+    <div class="row">
+      <div class="btn_div">
+        <button onclick="window.location='/learn/indirectFreeKick'" class="page_btn">Previous</button>
+        <button onclick="window.location='/learn/indirectFreeKick'" class="page_btn">Next</button>
+      </div>
+    </div>
+    <div class="row footer"></div>
 </div>
 
 {% endblock %}
