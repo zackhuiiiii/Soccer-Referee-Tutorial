@@ -15,6 +15,7 @@
     <!--Popper JS  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <!-- My files -->
+    <script src="{{ url_for('static', filename='main.js')}}"></script>
     <link type="text/css" href="{{ url_for('static', filename='main.css')}}" rel="stylesheet">
 
 </head>
@@ -28,7 +29,28 @@
             </div>
             <div class="col-md-2 col-sm-2">
                 <ul>
-                    <li><a class="bar" onclick="window.location='/'"> Introduction </a></li>
+                    <!-- <li><a class="bar" onclick="window.location='/'"> Introduction </a></li> -->
+
+                    <li><a class="bar" href="/"> Introduction </a></li>
+                    <li><a class="bar" href='/learn/handSignal'> Handsignal </a></li>
+                    <ul>
+                        <li><a class="bar" href='/learn/freeKick'> Direct Free kicks </a></li>
+                        <li><a class="bar" href='/learn/indirectFreeKick'> Indirect Free kicks </a></li>
+                        <li><a class="bar" href='/learn/penaltyKick'> Penalty kicks </a></li>
+                        <li><a class="bar" href='/learn/cornerKick'> Corner kicks </a></li>
+                        <li><a class="bar" href='/learn/advantage'> Advantage </a></li>
+                        <li><a class="bar" href='/learn/goal'> Goal </a></li>
+                    </ul>   
+                        <!-- <button class="bar" onclick="window.location='/learn/otherSignal'"> Other signals </button> -->
+                    <li><a class="bar" href='/learn/offsides'> Offsides </a></li>
+                    <li><a class="bar" href='/learn/offsides_2'> Offsides- Rules </a></li>
+                    <li><a class="bar" href='/learn/yellowCard'> Yellow Card </a></li>
+                    <li><a class="bar"href='/learn/redCard'> Red Card </a></li>
+                    <li><a class="bar" href='/learn/var'> VAR </a></li>
+                    <li><a class="bar" href='/learn/substitution'> Substitution </a></li>
+                    <li><a class="bar" href='/learn/throwin'> Throw-In </a></li>
+                    <li><a class="bar" href='/finishtutorial'> Quiz </a></li>
+                    <!-- 
                     <li><a class="bar" onclick="window.location='/learn/handSignal'"> Handsignal </a></li>
                     <ul>
                         <li><a class="bar" onclick="window.location='/learn/freeKick'"> Direct Free kicks </a></li>
@@ -38,7 +60,7 @@
                         <li><a class="bar" onclick="window.location='/learn/advantage'"> Advantage </a></li>
                         <li><a class="bar" onclick="window.location='/learn/goal'"> Goal </a></li>
                     </ul>   
-                        <!-- <button class="bar" onclick="window.location='/learn/otherSignal'"> Other signals </button> -->
+        
                     <li><a class="bar" onclick="window.location='/learn/offsides'"> Offsides </a></li>
                     <li><a class="bar" onclick="window.location='/learn/offsides_2'"> Offsides- Rules </a></li>
                     <li><a class="bar" onclick="window.location='/learn/yellowCard'"> Yellow Card </a></li>
@@ -46,7 +68,7 @@
                     <li><a class="bar" onclick="window.location='/learn/var'"> VAR </a></li>
                     <li><a class="bar" onclick="window.location='/learn/substitution'"> Substitution </a></li>
                     <li><a class="bar" onclick="window.location='/learn/throwin'"> Throw-In </a></li>
-                    <li><a class="bar" onclick="window.location='/finishtutorial'"> Quiz </a></li>
+                    <li><a class="bar" onclick="window.location='/finishtutorial'"> Quiz </a></li> -->
                 </ul>   
             </div>
         </div>

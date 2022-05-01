@@ -1,5 +1,6 @@
 li a {
   display: block;
+  text-decoration: none;
 }
 
 li a:hover {
