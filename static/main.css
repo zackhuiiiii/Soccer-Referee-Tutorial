@@ -1,3 +1,7 @@
+:root {
+  --theme_blue: rgba(172, 241, 255, 0.567);
+  --theme_blue_dark: rgba(140, 202, 214, 0.567);
+}
 
 body{
     background: url(background.jpg); /* fallback */
@@ -65,6 +69,21 @@ body{
     padding: 7px 10px;
     border-radius: 4px;  
     font-size: 19px;
+}
+.page_btn{
+  background-color: var(--theme_blue);
+  color: white;
+  border-radius: 20px;
+  border: none;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 10px;
+}
+.page_btn:hover{
+  background-color: var(--theme_blue_dark);
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 }
 
 @font-face {

@@ -74,7 +74,7 @@ function question_content(){
 function quiz_button(){
     // generate submit and answer status
     console.log(q_status);
-    $("#submit_button").append('<button type="button" onClick="Submit()" class="btn btn-info">Submit</button>')
+    $("#submit_button").append('<button type="button" onClick="Submit()" class="page_btn">Submit</button>')
 
     $("#quiz_action_button").append(`<h4> Quiz Status</h4>`)
     for(let quiz in q_status){

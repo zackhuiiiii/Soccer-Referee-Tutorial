@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Soccer Referee Tutorial</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='web-icon.png')}}">
 
     <!-- JQuery -->
     <script src=https://code.jquery.com/jquery-3.3.1.min.js crossorigin="anonymous"></script>
@@ -25,8 +26,8 @@
             <h2>Ready to Take the Quiz?</h2>
         </div>
         <div class="choice_button">
-            <button onclick="window.location='/learn/handSignal'"> No! Need to review</button>
-            <button onclick="window.location='/quiz/1'"> Sure! Go to quiz </button>
+            <button onclick="window.location='/learn/handSignal'" class="page_btn"> No! Need to review</button>
+            <button onclick="window.location='/quiz/1'" class="page_btn"> Sure! Go to quiz </button>
         </div>
     </div>
     
