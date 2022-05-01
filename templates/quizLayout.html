@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <!-- My files -->
     <link type="text/css" href="{{ url_for('static', filename='main.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='quiz.css')}}" rel="stylesheet">
 
 </head>
 
@@ -24,11 +25,12 @@
     <nav class="navbar navbar-expand-lg">
         <div class="navbar-brand nav-title">Quiz</div>
         <div class="navbar-brand nav-right">
-            <span class="navbar-secondary-brand">Question {{ques_index}}/7</span>
-            <span class="navbar-secondary-brand" id="quiz_score">Score {{score}}/7</span>
+            <div class="navbar-secondary-brand">Question {{ques_index}}/7</div>
+            <div class="navbar-secondary-brand"> Score</div>
+            <div class="navbar-secondary-score" id="quiz_score">{{score}}/7</div>
+            
         </div>
-        
-        <img src="">
+        <div class="score_icon"> <img src="{{ url_for('static', filename='cloth.png')}}"> </div>
     </nav>
     <div class="container-fluid">
         {% block content %}

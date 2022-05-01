@@ -26,7 +26,7 @@ quiz_question  ={
         "Answers":{
             "D": "Direct Kick Off",
             "C": "Indirect Kick Off",
-            "B": "Red and Yellow Card",
+            "B": "Red & Yellow Card",
             "A": "Advantage"},
         "Media":{
             "A": "/static/quiz2_1.jpg",
