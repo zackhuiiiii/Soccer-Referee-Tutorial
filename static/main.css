@@ -51,16 +51,13 @@ body{
     font-size: 15px;
     color: rgb(224, 117, 117);
 }
-.a {
+.next{
     text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
-  }
-.previous {
-    background-color: #f1f1f1;
-    color: black;
-  }
-.a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+    color: white;
+    background: green;
+    padding: 7px 10px;
+    border-radius: 4px;  
+    font-size: 19px;
+    
+}
+
