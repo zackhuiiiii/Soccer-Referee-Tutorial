@@ -20,7 +20,17 @@ $(function(){
         drop: function( event, ui ) {
             let choice = ui.draggable.text();
             let option= $(this).attr('data-name');
-            console.log(choice, option)
+            ui.draggable.position({
+              my: "center",
+              at: "center",
+              of: $(this),
+              using: function(pos) {
+                $(this).animate(pos, 200, "linear");
+              }
+            });
+            // ui.draggable.css('top','366px');
+            ui.draggable.css('z-index', '1');
+            console.log(choice, option);
             flag++;
             if(choice != option){
                 answer_quiz2 = "F";
@@ -32,22 +42,27 @@ $(function(){
 
 function question_content(){
     // fill in quiz question and the options
-    if(q_index == drag_question_index){     //drag quiz question 2
+    if(q_index == drag_question_index){             //drag quiz question 2
         // change layout ratio
-        $('.choices').attr('class', 'col-md-2 choices')
-        $('#media').attr('class', 'col-md-8')
+        $('#choice_row').after(`<div class="row pl-5 pr-5" id="media"></div>`)
+        $('#choice_row').after(`<div class="row pl-5 pr-5 mb-3 drag_choice" id="choices"></div>`)
+        $('#choice_row').remove();
 
         // add question content and media
         $(".quiz_question").text(q_content["Q"]);
-        let $options = $(`<div></div>`)
+        // let $options = $(`<div></div>`)
+        // let $medias = $(`<div class="row"></div>`)
         for(let letter in q_content['Answers']){
-            $options.append(`<div class="drag_option">${q_content['Answers'][letter]}</div>`)
-            $('#media').append(`<div class="answer_div">
+            $('#choices').append(`<div class="col-md-3">
+                                    <div class="drag_option page_btn"> ${q_content['Answers'][letter]} </div>
+                                  </div>`)
+            $('#media').append(`<div class="col-md-3">
                                     <img class="drag_img" src="${q_content['Media'][letter]}" alt="choice${letter}" id="${letter}">
                                     <div class="drop_div" data-name="${q_content['Correct_answer'][letter]}"></div>
                                 </div>`)
         }
-        $('.choices').append($options)
+        // $('#media').append($medias)
+        // $('#choices').append($options)
 
     }else{
         $(".quiz_question").text(q_content["Q"]);
@@ -56,7 +71,7 @@ function question_content(){
             $options.append(`<input type="radio" name="question${q_index}" value="${letter}"/>
                 <lable id="${q_index}_${letter}">${letter}: ${q_content['Answers'][letter]}</lable><br/>`);
         }
-        $(".choices").append($options);
+        $("#choices").append($options);
         // add media
         if(q_content['media']){
             media=q_content['media']
@@ -76,9 +91,9 @@ function quiz_button(){
     console.log(q_status);
     $("#submit_button").append('<button type="button" onClick="Submit()" class="page_btn">Submit</button>')
 
-    $("#quiz_action_button").append(`<h4> Quiz Status</h4>`)
+    $("#status_div").append(`<h4> Quiz Status</h4>`)
     for(let quiz in q_status){
-        $("#quiz_action_button").append(`<div class="${status_button_class[q_status[quiz]]} quiz_status_box">${quiz}</div>`)
+        $("#status_div").append(`<div class="${status_button_class[q_status[quiz]]} quiz_status_box">${quiz}</div>`)
     }
 }
 
@@ -135,9 +150,9 @@ function Submit(){
             // change the button to next or finish
             $("#submit_button").empty();
             if(q_index != last_quesion_index){
-                $("#submit_button").append(`<button type="button" onClick="window.location='/quiz/${(parseInt(q_index)+1).toString()}'" class="btn btn-info">Next</button>`)
+                $("#submit_button").append(`<button type="button" onClick="window.location='/quiz/${(parseInt(q_index)+1).toString()}'" class="page_btn">Next</button>`)
             }else{
-                $("#submit_button").append(`<button type="button" onClick="window.location='/quiz_final'" class="btn btn-info">Finish</button>`)
+                $("#submit_button").append(`<button type="button" onClick="window.location='/quiz_final'" class="page_btn">Finish</button>`)
             }
         },
         error: function(request, status, error){
