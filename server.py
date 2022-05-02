@@ -163,7 +163,7 @@ def quizpage(id = None):
 @app.route('/quiz_final/')
 def quiz_final():
     
-    if int(score) > 5:
+    if int(score) > 3:
         message = "Congratulations! You have passed the quiz!"
     else:
         message = "Sorry you have not passed the quiz. Maybe you can review the tutorial."
