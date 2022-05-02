@@ -110,23 +110,29 @@ body{
   font-family: 'title2-font';
   src: url("../static/font/HGH5_CNKI.ttf");
 }
-    
+
 .progress_bar{
   padding-top: 50px;
   list-style-type: none;
   padding-left: 10px;
+  font-size: 25px;
 }
 .progress_bar:hover{
   text-decoration: none;
 }
 .progress_bar ul{
   list-style-type: none;
+  padding-left: 20px;
+}
+.progress_bar ul li a{
+  font-size: 13px;
 }
 .progress_bar a{
   padding: 5px 7px 5px 3px;
   border-radius: 5px;
   color: white;
   text-decoration: none;
+  font-size: 20px;
 }
 .progress_bar a:hover{
   background-color: var(--theme_blue_darker);
