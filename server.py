@@ -9,6 +9,7 @@ quiz_status = {
     # N for not anserwed, C for correct, W for wrong
     "1": "N", "2": "N", "3": "N", "4": "N", "5": "N", "6": "N", "7": "N", 
 }
+tutorial_state = []
 
 # not all the questions is filled, and the Correct_answer is not changed into the correct one
 quiz_question  ={
@@ -37,7 +38,7 @@ quiz_question  ={
         "Correct_answer": {
             "A": "Direct Kick Off",
             "B": "Indirect Kick Off",
-            "C": "Red and Yellow Card",
+            "C": "Red & Yellow Card",
             "D": "Advantage"
         }
     },
@@ -103,35 +104,49 @@ def homepage():
 def learnpage(id = None):
     print("id= ",id)
     if id == "handSignal":
-        return render_template('learnHandSignal.html')
+        tutorial_state.append('2')
+        return render_template('learnHandSignal.html', state=tutorial_state)
     elif id == "freeKick":
-        return render_template('learnFreeKicks.html')
+        tutorial_state.append('2-1')
+        return render_template('learnFreeKicks.html', state=tutorial_state)
     elif id == "penaltyKick":
-        return render_template('learnPenalties.html')
+        tutorial_state.append('2-3')
+        return render_template('learnPenalties.html', state=tutorial_state)
     elif id == "cornerKick":
-        return render_template('learnCornerKicks.html')
+        tutorial_state.append('2-4')
+        return render_template('learnCornerKicks.html', state=tutorial_state)
     elif id == "advantage":
-        return render_template('learnAdvantage.html')
+        tutorial_state.append('2-5')
+        return render_template('learnAdvantage.html', state=tutorial_state)
     elif id == "indirectFreeKick":
-        return render_template('learnIndirectFreeKicks.html')    
+        tutorial_state.append('2-2')
+        return render_template('learnIndirectFreeKicks.html', state=tutorial_state)    
     elif id == "otherSignal":
-        return render_template('learnOtherSignals.html')
+        return render_template('learnOtherSignals.html', state=tutorial_state)
     elif id == "redCard":
-        return render_template('learnRedCard.html')
+        tutorial_state.append('6')
+        return render_template('learnRedCard.html', state=tutorial_state)
     elif id =="yellowCard":
-        return render_template('learnYellowCard.html')
+        tutorial_state.append('5')
+        return render_template('learnYellowCard.html', state=tutorial_state)
     elif id =="offsides":
-        return render_template('learnOffsides.html') 
+        tutorial_state.append('3')
+        return render_template('learnOffsides.html', state=tutorial_state) 
     elif id =="offsides_2":
-        return render_template('learnOffsides2.html') 
+        tutorial_state.append('4')
+        return render_template('learnOffsides2.html', state=tutorial_state) 
     elif id == "substitution":
-        return render_template('learnSubstitution.html')
+        tutorial_state.append('8')
+        return render_template('learnSubstitution.html', state=tutorial_state)
     elif id == "goal":
-        return render_template('learnGoal.html')
+        tutorial_state.append('2-6')
+        return render_template('learnGoal.html', state=tutorial_state)
     elif id=="var":
-        return render_template('learnVAR.html')
+        tutorial_state.append('7')
+        return render_template('learnVAR.html', state=tutorial_state)
     elif id == "throwin":
-        return render_template('learnThrowIn.html')
+        tutorial_state.append('9')
+        return render_template('learnThrowIn.html', state=tutorial_state)
 
 @app.route('/finishtutorial')
 def finish_tutorial():
@@ -165,8 +180,17 @@ def increment():
     result = {"status": 'F', "choice": ans, "correct_answer": quiz_question[str(ind)]['Correct_answer'], "score": score}
     quiz_status[str(ind)] = 'W'
     print(ans,ind)
+    flag = True
 
-    if (str(ind) == '2' and ans=='T') or (quiz_question[str(ind)]['Correct_answer']==ans):       # correct answer
+    if (str(ind) == '2'):
+        for letter in result["correct_answer"]:
+          if result["correct_answer"][letter].strip() != ans[letter].strip():
+            print(result["correct_answer"][letter], ans[letter])
+            flag = False
+    elif(quiz_question[str(ind)]['Correct_answer'] != ans):       # correct answer
+        flag = False
+        
+    if flag:
         score += 1
         result['status'] = 'T'
         result['score'] = score

@@ -28,51 +28,34 @@
                 {% endblock %}
             </div>
             <div class="col-md-2 col-sm-2">
-                <ul>
-                    <!-- <li><a class="bar" onclick="window.location='/'"> Introduction </a></li> -->
-
-                    <li><a class="bar" href="/"> Introduction </a></li>
-                    <li><a class="bar" href='/learn/handSignal'> Handsignal </a></li>
+                <ul class="progress_bar">
+                    <li><span class="list visited"></span><a class="bar" href="/" id="1"> Introduction </a></li>
+                    <li><span class="list"></span><a class="bar" href='/learn/handSignal' id="2"> Handsignal </a></li>
                     <ul>
-                        <li><a class="bar" href='/learn/freeKick'> Direct Free kicks </a></li>
-                        <li><a class="bar" href='/learn/indirectFreeKick'> Indirect Free kicks </a></li>
-                        <li><a class="bar" href='/learn/penaltyKick'> Penalty kicks </a></li>
-                        <li><a class="bar" href='/learn/cornerKick'> Corner kicks </a></li>
-                        <li><a class="bar" href='/learn/advantage'> Advantage </a></li>
-                        <li><a class="bar" href='/learn/goal'> Goal </a></li>
-                    </ul>   
+                        <li><span class="list_second"></span><a  id="2-1"class="bar" href='/learn/freeKick'> Direct Free kicks </a></li>
+                        <li><span class="list_second"></span><a id="2-2" class="bar" href='/learn/indirectFreeKick'> Indirect Free kicks </a></li>
+                        <li><span class="list_second"></span><a id="2-3" class="bar" href='/learn/penaltyKick'> Penalty kicks </a></li>
+                        <li><span class="list_second"></span><a id="2-4" class="bar" href='/learn/cornerKick'> Corner kicks </a></li>
+                        <li><span class="list_second"></span><a id="2-5" class="bar" href='/learn/advantage'> Advantage </a></li>
+                        <li><span class="list_second"></span><a id="2-6" class="bar" href='/learn/goal'> Goal </a></li>
+                    </ul>
                         <!-- <button class="bar" onclick="window.location='/learn/otherSignal'"> Other signals </button> -->
-                    <li><a class="bar" href='/learn/offsides'> Offsides </a></li>
-                    <li><a class="bar" href='/learn/offsides_2'> Offsides- Rules </a></li>
-                    <li><a class="bar" href='/learn/yellowCard'> Yellow Card </a></li>
-                    <li><a class="bar"href='/learn/redCard'> Red Card </a></li>
-                    <li><a class="bar" href='/learn/var'> VAR </a></li>
-                    <li><a class="bar" href='/learn/substitution'> Substitution </a></li>
-                    <li><a class="bar" href='/learn/throwin'> Throw-In </a></li>
-                    <li><a class="bar" href='/finishtutorial'> Quiz </a></li>
-                    <!-- 
-                    <li><a class="bar" onclick="window.location='/learn/handSignal'"> Handsignal </a></li>
-                    <ul>
-                        <li><a class="bar" onclick="window.location='/learn/freeKick'"> Direct Free kicks </a></li>
-                        <li><a class="bar" onclick="window.location='/learn/indirectFreeKick'"> Indirect Free kicks </a></li>
-                        <li><a class="bar" onclick="window.location='/learn/penaltyKick'"> Penalty kicks </a></li>
-                        <li><a class="bar" onclick="window.location='/learn/cornerKick'"> Corner kicks </a></li>
-                        <li><a class="bar" onclick="window.location='/learn/advantage'"> Advantage </a></li>
-                        <li><a class="bar" onclick="window.location='/learn/goal'"> Goal </a></li>
-                    </ul>   
-        
-                    <li><a class="bar" onclick="window.location='/learn/offsides'"> Offsides </a></li>
-                    <li><a class="bar" onclick="window.location='/learn/offsides_2'"> Offsides- Rules </a></li>
-                    <li><a class="bar" onclick="window.location='/learn/yellowCard'"> Yellow Card </a></li>
-                    <li><a class="bar"onclick="window.location='/learn/redCard'"> Red Card </a></li>
-                    <li><a class="bar" onclick="window.location='/learn/var'"> VAR </a></li>
-                    <li><a class="bar" onclick="window.location='/learn/substitution'"> Substitution </a></li>
-                    <li><a class="bar" onclick="window.location='/learn/throwin'"> Throw-In </a></li>
-                    <li><a class="bar" onclick="window.location='/finishtutorial'"> Quiz </a></li> -->
+                    <li><span class="list"></span><a id="3" class="bar" href='/learn/offsides'> Offsides </a></li>
+                    <li><span class="list"></span><a id="4" class="bar" href='/learn/offsides_2'> Offsides- Rules </a></li>
+                    <li><span class="list"></span><a id="5" class="bar" href='/learn/yellowCard'> Yellow Card </a></li>
+                    <li><span class="list"></span><a id="6" class="bar" href='/learn/redCard'> Red Card </a></li>
+                    <li><span class="list"></span><a id="7" class="bar" href='/learn/var'> VAR </a></li>
+                    <li><span class="list"></span><a id="8" class="bar" href='/learn/substitution'> Substitution </a></li>
+                    <li><span class="list"></span><a id="9" class="bar" href='/learn/throwin'> Throw-In </a></li>
+                    <li><span class="list"></span><a id="10" class="bar" href='/finishtutorial'> Quiz </a></li>
                 </ul>   
             </div>
         </div>
     </div>
     
+    <script>
+      var tutorial_state = {{state|tojson}}
+      console.log(tutorial_state);
+    </script>
 </body>
 </html>

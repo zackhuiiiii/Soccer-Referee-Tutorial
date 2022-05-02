@@ -1,4 +1,4 @@
-li a {
+/* li a {
   display: block;
   text-decoration: none;
 }
@@ -6,7 +6,7 @@ li a {
 li a:hover {
   background-color: #555;
   color: white;
-}
+} */
 .handSignalContent{
     margin-top: 100px;
     padding-bottom: 50px;
@@ -34,9 +34,6 @@ li a:hover {
     padding:10px;
 
 } */
-.center {
-  text-align: center;
-}
 .text_h4{
   font-size: 25px;
   display: inline-block;

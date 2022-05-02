@@ -1,8 +1,7 @@
 var last_quesion_index = '7'
 var drag_question_index = '2'
 var status_button_class = {"N": "yellow_box", "C": "green_box", "W": "red_box"}
-var answer_quiz2 = "T"
-var flag = 0
+var answer_quiz2 = {}
 
 $(function(){
     question_content();
@@ -10,6 +9,26 @@ $(function(){
     $( ".drag_option" ).draggable({
         revert: "invalid",
         stack: ".drag_option"
+    });
+    $( ".drag_div" ).droppable({
+        accept: ".drag_option",
+        classes: {
+            "ui-droppable-active": "droppable_active",
+            "ui-droppable-hover": "droppable_hover"
+        },
+        drop: function( event, ui ) {
+          ui.draggable.position({
+            my: "top",
+            at: "top",
+            of: $(this),
+            using: function(pos) {
+              $(this).animate(pos, 200, "linear");
+            }
+          });
+          let option= $(this).attr('data-name');
+          delete answer_quiz2[option];
+          console.log(answer_quiz2)
+        }
     });
     $( ".drop_div" ).droppable({
         accept: ".drag_option",
@@ -19,22 +38,17 @@ $(function(){
         },
         drop: function( event, ui ) {
             let choice = ui.draggable.text();
-            let option= $(this).attr('data-name');
+            let option= $(this).attr('id');
             ui.draggable.position({
-              my: "center",
-              at: "center",
+              my: "top",
+              at: "top",
               of: $(this),
               using: function(pos) {
                 $(this).animate(pos, 200, "linear");
               }
             });
-            // ui.draggable.css('top','366px');
-            ui.draggable.css('z-index', '1');
-            console.log(choice, option);
-            flag++;
-            if(choice != option){
-                answer_quiz2 = "F";
-            }
+            // console.log(choice, option);
+            answer_quiz2[option] = choice;
             console.log(answer_quiz2)
         }
     });
@@ -45,7 +59,7 @@ function question_content(){
     if(q_index == drag_question_index){             //drag quiz question 2
         // change layout ratio
         $('#choice_row').after(`<div class="row pl-5 pr-5" id="media"></div>`)
-        $('#choice_row').after(`<div class="row pl-5 pr-5 mb-3 drag_choice" id="choices"></div>`)
+        $('#choice_row').after(`<div class="row pl-5 pr-5 mb-5 drag_choice" id="choices"></div>`)
         $('#choice_row').remove();
 
         // add question content and media
@@ -53,12 +67,12 @@ function question_content(){
         // let $options = $(`<div></div>`)
         // let $medias = $(`<div class="row"></div>`)
         for(let letter in q_content['Answers']){
-            $('#choices').append(`<div class="col-md-3">
+            $('#choices').append(`<div class="col-md-3 col-sm-6 center drag_div" data-name="${letter}">
                                     <div class="drag_option page_btn"> ${q_content['Answers'][letter]} </div>
                                   </div>`)
-            $('#media').append(`<div class="col-md-3">
-                                    <img class="drag_img" src="${q_content['Media'][letter]}" alt="choice${letter}" id="${letter}">
-                                    <div class="drop_div" data-name="${q_content['Correct_answer'][letter]}"></div>
+            $('#media').append(`<div class="col-md-3 col-sm-6 center">
+                                    <img class="drag_img" src="${q_content['Media'][letter]}" alt="choice${letter}">
+                                    <div class="drop_div" id="${letter}"></div>
                                 </div>`)
         }
         // $('#media').append($medias)
@@ -69,13 +83,16 @@ function question_content(){
         let $options = $(`<form></form>`);
         for(let letter in q_content['Answers']){
             $options.append(`<input type="radio" name="question${q_index}" value="${letter}"/>
-                <lable id="${q_index}_${letter}">${letter}: ${q_content['Answers'][letter]}</lable><br/>`);
+                <label id="${q_index}_${letter}">${letter}: ${q_content['Answers'][letter]}</label><br/>`);
         }
         $("#choices").append($options);
         // add media
         if(q_content['media']){
             media=q_content['media']
             $("#media").append(`<img src = ${media} id="quiz_media">`);
+        }
+        else{
+          $("#choices").attr('class', 'col-md-10 choices');
         }
     }
     
@@ -91,7 +108,7 @@ function quiz_button(){
     console.log(q_status);
     $("#submit_button").append('<button type="button" onClick="Submit()" class="page_btn">Submit</button>')
 
-    $("#status_div").append(`<h4> Quiz Status</h4>`)
+    // $("#status_div").append(`<h4> Quiz Status</h4>`)
     for(let quiz in q_status){
         $("#status_div").append(`<div class="${status_button_class[q_status[quiz]]} quiz_status_box">${quiz}</div>`)
     }
@@ -101,7 +118,7 @@ function Submit(){
     console.log('Submit')
     let data_to_save = {}
     if(q_index == drag_question_index){     // quiz question 2
-        if(flag < 4){
+        if(Object.keys(answer_quiz2).length < 4){
             console.log("not answered")
             $('.warning_message').remove();
             $('#submit_button').append(`<p class="warning_message">Please finish the question</p>`);
@@ -130,11 +147,12 @@ function Submit(){
         success: function(result){
             console.log("ajax result", result)
             // change the score number
-            $('#quiz_score').text(`Score: ${result.score}/7`)
+            $('#quiz_score').text(`${result.score}/7`)
             
             if(q_index == drag_question_index){     //quiz 2
-                for(let letter in result.correct_answer){
-                    $('#'+letter).after(`<div class="correct_drag_answer">${result.correct_answer[letter]}</div>`)
+                for(let letter in result.choice){
+                    var classname = $.trim(result.choice[letter]) == $.trim(result.correct_answer[letter]) ? 'correct' : 'wrong'
+                    $('#'+letter).after(`<div class="drag_answer ${classname}">${result.correct_answer[letter]}</div>`)
                 }
             }else{                                  // normal quesions
                 let correct_id = '#' + q_index + "_" + result.correct_answer

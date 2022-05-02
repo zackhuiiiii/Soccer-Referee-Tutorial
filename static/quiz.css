@@ -1,3 +1,7 @@
+:root{
+  --correct_color: rgba(142, 210, 142, 0.701);
+  --wrong_color: rgba(239, 160, 160, 0.701);
+}
 .score_icon{
   position: absolute;
   right: 18px;
@@ -7,15 +11,23 @@
   height: 61px;
   width: 83px;
 }
-
+label{
+  margin: 5px;
+  padding: 0px 5px;
+}
 
 .quiz_question{
     font-size: 25px;
-    margin: 100px;
-    margin-bottom: 20px;
+    margin: 20px 60px;
+    padding: 0px 100px;
+    /* margin-bottom: 20px; */
+}
+.right{
+  margin: 30px 50px 0px auto;
 }
 .choices{
     margin: 50px 30px 100px 100px;
+    padding-left: 90px;
     font-size: 20px;
 }
 .drag_choices{
@@ -23,10 +35,10 @@
     text-align: center;
 }
 .green_box{
-    background-color: rgba(142, 210, 142, 0.701);
+    background-color: var(--correct_color);
 }
 .red_box{
-    background-color: rgba(239, 160, 160, 0.701);
+    background-color: var(--wrong_color);
 }
 .yellow_box{
     background-color: rgba(243, 240, 222, 0.701);
@@ -57,21 +69,27 @@
 }
 
 .correct_choice{
-    background-color: rgba(178, 235, 178, 0.797);
+    background-color: var(--correct_color);
     border-radius: 5px;
     padding-right: 5px;
 }
 .wrong_choice{
-    background-color: rgba(239, 160, 160, 0.701);
+    background-color: var(--wrong_color);
     border-radius: 5px;
     padding-right: 5px;
 }
-.correct_drag_answer{
-    background-color: rgba(178, 235, 178, 0.797);
+.drag_answer{
+    background-color: var(--correct_color);
     width: 190px;
     text-align: center;
     border-radius: 5px;
-    margin: 10px;
+    margin: auto;
+}
+.drag_answer.correct{
+  background-color: var(--correct_color);
+}
+.drag_answer.wrong{
+  background-color: var(--wrong_color);
 }
 
 .drag_option{
@@ -85,14 +103,11 @@
     text-align: center;
     /* display: inline-block; */
 }
-/* .drag_option:hover{
-    background-color: rgb(99, 128, 153);
-    cursor: move;
-} */
 .drag_img{
     padding: 0px 10px;
-    width: 100%;
-    height: 300px;
+    /* max-height: 300px; */
+    aspect-ratio: 0.7;
+    width: 70%;
 }
 .drop_div{
     width: 98%;
@@ -101,6 +116,11 @@
     border-style: dotted;
     border-radius: 5px;
     border-color: rgb(70, 96, 119);
+}
+.drag_div{
+    border-style: dotted;
+    border-radius: 1px;
+    border-color: rgba(70, 96, 119, 0.122);
 }
 .answer_div{
     display: inline-block;
