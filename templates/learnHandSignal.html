@@ -7,18 +7,27 @@
 
 
 <div class="container" id="learnHandSignal"> 
-    <h1>Hand Signal</h1>
-    <!-- <div id="recordline"></div> -->
-    <div class="handSignalContent">
-        Regardless of the language players and audience speak, they understand the same hand signals.
+    <div class='row'>
+      <div class=" heading">Hand Signal</div>
+      <div class="col-md-12 center">
+              <img src="../static/handsignals.jpg" class="media2">
+      </div>
+      <!-- <iframe width="600" height="450" src="https://www.youtube.com/embed/GePlbCsGniA"> </iframe><br> -->
+      <div class="col-md-12 p-1">
+        <div class=" usercard2">
+          <div class="card2_title">Introduction</div>
+          <div class="card2_content">Regardless of the language players and audience speak, they understand the same hand signals.</div>
+          <hr>
+          <div class="card2_content"> Learning them involves recognizing different hand movements, gestures and the flag system.</div>
+        </div>
+      </div>
     </div>
-    <div class="handSignalContent">
-        Learning them involves recognizing different hand movements, gestures and the flag system.
-    </div>
-    <div class=" choice_button">
-        <button onclick="window.location='/learn/freeKick'" class="page_btn"> Start with Free Kicks! </button>
-    </div>
-
+    <br>
+    <br>
+    <div style="text-align:right">   
+        <a href="/learn/freeKick" class="next">Start with Free Kicks! &raquo;</a>
+    </div> 
+    <div class="row footer"></div>
 </div>
 
 {% endblock %}

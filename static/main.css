@@ -102,10 +102,14 @@ body{
 }
 .next{
     color: white;
-    background: green;
+    background: rgba(120, 214, 117, 0.496);
     padding: 7px 10px;
     border-radius: 4px;  
     font-size: 19px;
+}
+.next:hover{
+    text-decoration: none;
+    color: var(--theme_blue);
 }
 .page_btn{
   background-color: var(--theme_blue_darker);
@@ -192,5 +196,13 @@ span.visited{
   background-color: rgba(235, 208, 145, 0.815);
 }
 span.active{
-  background-color: rgb(217, 157, 181) !important;
+  background-color: rgba(235, 208, 145, 0.815) !important;
+}
+
+.finish_text{
+  font-family: 'title2-font';
+  text-align: center;
+  margin: 70px;
+  margin-top: 200px;
+  font-size: 43px;
 }
