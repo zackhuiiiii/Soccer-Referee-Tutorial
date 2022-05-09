@@ -17,14 +17,38 @@ body{
     font-weight: 200;
 }
 
-.web-title{
+.web_title{
     text-align: center;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 150px;
+    font-size: 60px;
+    font-family: 'mainpage-font';
+    width: 70%;
+    color: white;
+    text-shadow: 4px 3px #b99d5d68;
+    font-weight: 300;
 }
+
 .introduction{
-    text-align: left;
-    margin: 50px;
+    text-align: center;
+    margin: 50px 0px;
+    font-family: 'title2-font';
+    font-weight: 0;
+}
+.side_line{
+  width: 28%;
+  height: 8px;
+  background-color: rgba(172, 241, 255, 0.342);
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.ps{
+  color: rgba(255, 255, 255, 0.737);
+  text-align: right;
+  font-size: 15px;
+  margin-right: 20px;
+  margin-top: 30px;
+  font-style: italic;
 }
 .mainPage{
     padding-top: 30px;
@@ -40,7 +64,7 @@ body{
 .choice_button{
     margin: auto;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 .navbar{
     background-color: var(--theme_blue);
@@ -109,6 +133,10 @@ body{
 @font-face {
   font-family: 'title2-font';
   src: url("../static/font/HGH5_CNKI.ttf");
+}
+@font-face {
+  font-family: 'mainpage-font';
+  src: url("../static/font/HGB8_CNKI.TTF");
 }
 
 .progress_bar{

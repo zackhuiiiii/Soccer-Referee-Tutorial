@@ -58,7 +58,7 @@ quiz_question  ={
             "A": "Yes",
             "B": "No",
             "C": "Upon the referee's discretion",
-            "D": ""},
+            "D": "No action can be taken"},
         "Correct_answer": "A",
         "media":"/static/quiz_35.gif"
     },
