@@ -156,7 +156,16 @@ def finish_tutorial():
 
 @app.route('/quiz/<id>')
 def quizpage(id = None):
+    global score
+    global quiz_status
     # print(quiz_question[id])
+    print(score,type(score),type(id))
+    if(id=='1'):
+        score = 0
+        quiz_status = {
+    # N for not anserwed, C for correct, W for wrong
+        "1": "N", "2": "N", "3": "N", "4": "N", "5": "N", "6": "N", "7": "N", 
+        }
     return render_template('quiz.html', ques_index = id, ques_content = quiz_question[id], score = score, ques_status = quiz_status)
 
 
@@ -167,6 +176,7 @@ def quiz_final():
         message = "Congratulations! You have passed the quiz!"
     else:
         message = "Sorry you have not passed the quiz. Maybe you can review the tutorial."
+
     return render_template('quiz_final.html', score = score, message = message)
 
 
