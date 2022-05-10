@@ -13,13 +13,18 @@ $( document ).ready(function() {
         }
     }
     console.log(new_list)
-    $("#topics").prepend(`Topics you may want to revisit`)
+    
     // $("#status_div").append(`<div class="${status_button_class[q_status[quiz]]} quiz_status_box">${quiz}</div>`)
     if(new_list.length!=0){
-
+        $("#topics").prepend(`Topics you may want to revisit`)
+        let temp=[]
     	for (let ind in new_list){
     		topic=new_list[ind]
-    		$("#topics_list").append(topic+'<br>')
+
+    		if(!temp.includes(topic)){
+    			$("#topics_list").append(topic+'<br>')
+    	}
+        temp.push(topic)
     	}
     }
 });
