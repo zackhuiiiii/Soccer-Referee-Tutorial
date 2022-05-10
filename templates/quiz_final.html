@@ -1,7 +1,14 @@
 {% extends "quizLayout.html" %}
 {% block content %}
 
+<script src="{{ url_for('static', filename='quiz_final.js')}}"></script>
+<link type="text/css" href="{{ url_for('static', filename='quiz_final.css')}}" rel="stylesheet">
 
+<script>
+    let q_status = {{ques_status|tojson}}
+
+    // console.log(q_status)
+</script>
 <script>
     $('.nav-right').empty();
 </script>
@@ -13,6 +20,14 @@
         <br>
         <h1><center>Your score is {{score}}/7</h1><center>
         <h3><center>{{message}}<center></h3>
+    </div>
+    <div class="row">
+      <div id="status_div" class="center" ></div>
+    </div>
+    <div class="row">
+      <div id="topics" class="center" >
+          <ul id='topics_list'></ul>
+      </div>
     </div>
     <br>
     <div class="choice_button">

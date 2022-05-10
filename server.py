@@ -177,7 +177,7 @@ def quiz_final():
     else:
         message = "Sorry you have not passed the quiz. Maybe you can review the tutorial."
 
-    return render_template('quiz_final.html', score = score, message = message)
+    return render_template('quiz_final.html', score = score, message = message,ques_status = quiz_status)
 
 
 @app.route('/increment', methods=['GET', 'POST'])
