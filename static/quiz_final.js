@@ -19,7 +19,7 @@ $( document ).ready(function() {
 
     	for (let ind in new_list){
     		topic=new_list[ind]
-    		$("#topics_list").append('<li>'+topic+'</li>')
+    		$("#topics_list").append(topic+'<br>')
     	}
     }
 });
