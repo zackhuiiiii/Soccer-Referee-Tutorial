@@ -126,3 +126,10 @@ label{
 .answer_div{
     display: inline-block;
 }
+a:link {color:white;}      
+
+a:visited {color:white;} 
+
+a:hover {color:white;text-decoration:none;} 
+
+a:active {color:white;} 
