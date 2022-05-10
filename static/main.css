@@ -206,3 +206,11 @@ span.active{
   margin-top: 200px;
   font-size: 43px;
 }
+.nav-home{
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', sans-serif;
+  letter-spacing: 1px;
+  font-weight: lighter;
+}
