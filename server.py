@@ -25,8 +25,8 @@ quiz_question  ={
     "2": {
         "Q": "Drag the correct name to the corresponding gesturing picture.",
         "Answers":{
-            "D": "Direct Kick Off",
-            "C": "Indirect Kick Off",
+            "D": "Direct Free Kick",
+            "C": "Indirect Free Kick",
             "B": "Red & Yellow Card",
             "A": "Advantage"},
         "Media":{
@@ -36,8 +36,8 @@ quiz_question  ={
             "D": "/static/quiz2_4.jpg"
         },
         "Correct_answer": {
-            "A": "Direct Kick Off",
-            "B": "Indirect Kick Off",
+            "A": "Direct Free Kick",
+            "B": "Indirect Free Kick",
             "C": "Red & Yellow Card",
             "D": "Advantage"
         }
